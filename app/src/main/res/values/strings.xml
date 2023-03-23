@@ -1,0 +1,18 @@
+<!-- Файл ресурсов, в данном случае наборы строк для элементов интерфейса -->
+<resources>
+    <string name="app_name">Psychology athlete diary</string>
+    <string name="text_view_registration_text">Регистрация</string>
+    <string name="edit_text_person_name_hint">Имя</string>
+    <string name="edit_text_person_surname_hint">Фамилия</string>
+    <string name="edit_text_person_birth_date_hint">Дата рождения</string>
+    <string name="edit_text_login_hint">Логин</string>
+    <string name="edit_text_password_hint">Пароль</string>
+    <string name="edit_text_repeat_password_hint">Повторите пароль</string>
+    <string name="text_view_role_text">Роль</string>
+    <string name="radio_button_sportsman_text">Спортсмен</string>
+    <string name="radio_button_psychologist_text">Психолог</string>
+    <string name="button_registration_text">Зарегистрироваться</string>
+    <string name="application_icon_content_description">Иконка приложения</string>
+    <string name="text_view_to_auth_label">Уже есть аккаунт?</string>
+    <string name="button_authorization_text">Войти</string>
+</resources>
