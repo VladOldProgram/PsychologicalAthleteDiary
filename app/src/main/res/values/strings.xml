@@ -53,4 +53,6 @@
     <string name="text_view_today">12.02.2023</string>
     <string name="text_scheduled_tests">Запланированные тесты</string>
     <string name="text_future_date">13.02.2023</string>
+    
+    <string name="text_view_show_legend">Показать легенду</string>
 </resources>
