@@ -1,5 +1,6 @@
 <!-- Файл ресурсов, в данном случае наборы строк для элементов интерфейса -->
 <resources>
+    <string name="text_view_input_text">Вход</string>
     <string name="app_name">Psychology athlete diary</string>
     <string name="text_view_registration_text">Регистрация</string>
     <string name="edit_text_person_name_hint">Имя</string>
@@ -15,4 +16,41 @@
     <string name="application_icon_content_description">Иконка приложения</string>
     <string name="text_view_to_auth_label">Уже есть аккаунт?</string>
     <string name="button_authorization_text">Войти</string>
+    <string name="button_athlete_exit_text">Выйти</string>
+    <string name="text_athlete_login_label">Логин</string>
+    <string name="text_birthday_date_label">Дата рождения</string>
+    <string name="text_athlete_username_label">Elizaveta2587</string>
+    <string name="button_calendar_from_psychologist_text">Календарь</string>
+    <string name="text_athletes_name_surname_from_psychologist_label">Елизавета Гончарова</string>
+    <string name="button_delete_from_psychologist_text">Удалить</string>
+    <string name="button_psychologist_exit_text">Выйти</string>
+    <string name="text_psychologist_date_birth">03.09.1980</string>
+    <string name="text_psychologist_name_surname">Алексеева Анастасия</string>
+    <string name="button_requests_text">Заявки</string>
+    <string name="button_add_psychologist_text">Добавить психолога</string>
+    <string name="text_add_psychologist_name_surname">Алексеева Анастасия</string>
+    <string name="text_new_athlete_name_surname">Елизавета Гончарова</string>
+    <string name="button_menu_personal_notes">Личные заметки</string>
+    <string name="button_menu_calendar">Календарь</string>
+    <string name="button_menu_profile">Профиль</string>
+    <string name="text_psychologist">Психолог</string>
+    <string name="text_athletes_date_birth">25.08.1996</string>
+    <string name="text_athletes_name_surname">Елизавета Гончарова</string>
+    <string name="text_athlete">Спортсмен</string>
+    <string name="text_sportsman_profile">Профиль</string>
+    <string name="edit_text_password_form2">Пароль</string>
+    <string name="edit_text_login_form2">Логин</string>
+    <string name="text_not_account_label">Нет аккаунта?</string>
+    <string name="button_registration_form2_text">Зарегистрироваться</string>
+    <string name="button_input_text">Войти</string>
+    <string name="button_сonfirm">Подтвердить</string>
+    <string name="text_view_assigment_tests">Назначение теста</string>
+    <string name="text_view_assigment_date">15.02.2023</string>
+    <string name="text_view_not_complited_tests">Непройденные тесты</string>
+    <string name="text_view_yesterday">11.02.2023</string>
+    <string name="text_view_complited_tests">Пройденные тесты</string>
+    <string name="text_view_available_tests">Доступные для прохождения тесты</string>
+    <string name="text_view_today">12.02.2023</string>
+    <string name="text_scheduled_tests">Запланированные тесты</string>
+    <string name="text_future_date">13.02.2023</string>
 </resources>
