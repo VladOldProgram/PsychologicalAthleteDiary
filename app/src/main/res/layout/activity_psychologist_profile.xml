@@ -8,17 +8,15 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         tools:ignore="TextSizeCheck"
-        android:layout_width="360dp"
-        android:layout_height="700dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp"
-        android:paddingVertical="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064">
+        app:layout_constraintVertical_bias="0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,6 +39,7 @@
                 android:id="@+id/buttonPsychologistExit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="100dp"
                 android:layout_weight="1"
                 android:insetLeft="100dp"
                 android:text="@string/button_psychologist_exit_text"
