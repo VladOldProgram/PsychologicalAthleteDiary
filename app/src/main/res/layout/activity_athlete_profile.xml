@@ -10,11 +10,11 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="360dp"
-        android:layout_height="700dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp"
-        android:paddingVertical="10dp"
+        android:paddingHorizontal="0dp"
+        android:paddingVertical="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
@@ -26,7 +26,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:background="#F85E6F"
             android:orientation="horizontal">
 
@@ -45,6 +45,7 @@
                 android:id="@+id/buttonPsychologistExit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="100dp"
                 android:layout_weight="1"
                 android:insetLeft="100dp"
                 android:text="@string/button_athlete_exit_text"
@@ -106,6 +107,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:orientation="horizontal">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -132,8 +135,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="200dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:gravity="bottom"
             android:orientation="horizontal">
 
@@ -142,9 +146,10 @@
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
-                android:width="1dip"
-                android:background="@android:drawable/spinner_background"
+                android:background="#FFE7E9EC"
                 android:backgroundTint="#DFDFDF"
                 android:fadeScrollbars="false"
                 android:text="@string/button_menu_profile"
@@ -157,9 +162,11 @@
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:width="1dip"
-                android:background="@android:drawable/spinner_background"
+                android:background="#FFE7E9EC"
                 android:backgroundTint="#DFDFDF"
                 android:text="@string/button_menu_calendar"
                 android:textColor="#000000"
@@ -170,10 +177,11 @@
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:width="1dip"
-                android:background="@android:drawable/spinner_background"
-                android:backgroundTint="#DFDFDF"
+                android:background="#E7E9EC"
                 android:text="@string/button_menu_personal_notes"
                 android:textColor="#000000"
                 android:textSize="14sp" />
