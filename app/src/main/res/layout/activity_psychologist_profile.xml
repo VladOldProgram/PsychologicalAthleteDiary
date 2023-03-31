@@ -7,7 +7,6 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        tools:ignore="TextSizeCheck"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
@@ -88,7 +87,7 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/textAddPsychologistNameSurname"
+            android:id="@+id/buttonRequests"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/button_requests_text"
@@ -118,3 +117,4 @@
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
