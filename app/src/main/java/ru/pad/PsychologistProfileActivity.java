@@ -1,22 +1,23 @@
 package ru.pad;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.view.View;
-import android.content.Intent;
-
-/* Файл профиля психолога */
 public class PsychologistProfileActivity extends AppCompatActivity {
+    Button buttonRequests;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_psychologist_profile);
-    }
 
-    public void startRequestsActivity (View v) {
-        Intent intent = new Intent(PsychologistProfileActivity.this, PsychologistRequestsActivity.class);
-        startActivity(intent);
+        buttonRequests = findViewById(R.id.buttonRequests);
+        buttonRequests.setOnClickListener(view -> {
+            Intent psychologistRequestsActivity = new Intent(this, PsychologistRequestsActivity.class);
+            startActivity(psychologistRequestsActivity);
+        });
     }
 }
