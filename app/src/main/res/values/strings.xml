@@ -28,10 +28,11 @@
     <string name="button_requests_text">Заявки</string>
     <string name="button_add_psychologist_text">Добавить психолога</string>
     <string name="text_add_psychologist_name_surname">Алексеева Анастасия</string>
-    <string name="text_new_athlete_name_surname">Елизавета Гончарова</string>
+    <string name="text_sportsman_name_surname">Елизавета Гончарова</string>
     <string name="button_menu_personal_notes">Личные заметки</string>
     <string name="button_menu_calendar">Календарь</string>
     <string name="button_menu_profile">Профиль</string>
+    <string name="text_sportsman">Спортсмены</string>
     <string name="text_psychologist">Психолог</string>
     <string name="text_athletes_date_birth">25.08.1996</string>
     <string name="text_athletes_name_surname">Елизавета Гончарова</string>
@@ -55,4 +56,10 @@
     <string name="text_view_show_legend">Показать легенду</string>
     <string name="floating_action_button_add_psychologist_description">Кнопка добавления психолога</string>
     <string name="text_view_requests">Заявки</string>
+    <string name="enter_for_add_psychologist">Enter for add psychologist</string>
+    <string name="assigment_test_icon">Assigment Test Icon</string>
+    <string name="failed_tests_icon">Failed Tests Icon</string>
+    <string name="passed_tests_icon">Passed Tests Icon</string>
+    <string name="available_tests_icon">Available Tests Icon</string>
+    <string name="passed_tests_today_icon">Passed Tests Today Icon</string>
 </resources>
