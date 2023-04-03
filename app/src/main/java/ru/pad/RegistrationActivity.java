@@ -18,9 +18,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Date;
 
 import ru.pad.models.User;
 
@@ -55,9 +57,23 @@ public class RegistrationActivity extends AppCompatActivity {
         try {
             df.parse(date);
             return true;
-        } catch (ParseException ex) {
+        } catch (ParseException e) {
             return false;
         }
+    }
+
+    public static boolean dateIsNotFuture(String date) {
+        try {
+            Date currentDate = new Date();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy", Locale.ROOT);
+            Date registrationDate = formatter.parse(date);
+            if (currentDate.before(registrationDate)) {
+                return false;
+            }
+        } catch (ParseException e) {
+            return false;
+        }
+        return true;
     }
 
     public static final Pattern VALID_PASSWORD_ADDRESS_REGEX =
@@ -120,6 +136,15 @@ public class RegistrationActivity extends AppCompatActivity {
                 Snackbar.make(
                         constraintLayoutActivityRegistration,
                         "Введите дату рождения в формате \"ДД.ММ.ГГГГ\"",
+                        Snackbar.LENGTH_SHORT
+                ).show();
+                return;
+            }
+
+            if (!dateIsNotFuture(editTextPersonBirthDate.getText().toString())) {
+                Snackbar.make(
+                        constraintLayoutActivityRegistration,
+                        "Нельзя указать будущую дату в качестве даты рождения",
                         Snackbar.LENGTH_SHORT
                 ).show();
                 return;
