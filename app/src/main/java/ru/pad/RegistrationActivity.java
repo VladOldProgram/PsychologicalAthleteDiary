@@ -7,9 +7,11 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,6 +30,8 @@ import ru.pad.models.User;
 
 
 public class RegistrationActivity extends AppCompatActivity {
+    TextView textViewPersonNameError, textViewPersonSurnameError, textViewPersonBirthDateError,
+            textViewEmailError, textViewPasswordError, textViewRepeatPasswordError, textViewRadioGroupError;
     EditText editTextPersonName, editTextPersonSurname, editTextPersonBirthDate, editTextEmail,
             editTextPassword, editTextRepeatPassword;
     RadioButton radioButtonSportsman, radioButtonPsychologist;
@@ -83,6 +87,9 @@ public class RegistrationActivity extends AppCompatActivity {
         return matcher.matches();
     }
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,134 +107,119 @@ public class RegistrationActivity extends AppCompatActivity {
         buttonAuthorization = findViewById(R.id.buttonAuthorization);
         constraintLayoutActivityRegistration = findViewById(R.id.constraintLayoutActivityRegistration);
 
+        textViewPersonNameError = findViewById(R.id.textViewPersonNameError);
+        textViewPersonSurnameError = findViewById(R.id.textViewPersonSurnameError);
+        textViewPersonBirthDateError = findViewById(R.id.textViewPersonBirthDateError);
+        textViewEmailError = findViewById(R.id.textViewEmailError);
+        textViewPasswordError = findViewById(R.id.textViewPasswordError);
+        textViewRepeatPasswordError = findViewById(R.id.textViewRepeatPasswordError);
+        textViewRadioGroupError = findViewById(R.id.textViewRadioGroupError);
+
         database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
         users = database.getReference("Users");
 
+        editTextPersonName.setOnClickListener(view -> {
+            textViewPersonNameError.setText("");
+        });
+
+        editTextPersonSurname.setOnClickListener(view -> {
+            textViewPersonSurnameError.setText("");
+        });
+
+        editTextPersonBirthDate.setOnClickListener(view -> {
+            textViewPersonBirthDateError.setText("");
+        });
+
+        editTextEmail.setOnClickListener(view -> {
+            textViewEmailError.setText("");
+        });
+
+        editTextPassword.setOnClickListener(view -> {
+            textViewPasswordError.setText("");
+        });
+
+        editTextRepeatPassword.setOnClickListener(view -> {
+            textViewRepeatPasswordError.setText("");
+        });
+
+        radioButtonSportsman.setOnClickListener(view -> {
+            textViewRadioGroupError.setText("");
+        });
+
+        radioButtonPsychologist.setOnClickListener(view -> {
+            textViewRadioGroupError.setText("");
+        });
+
+
         buttonRegistration.setOnClickListener(view -> {
             if (TextUtils.isEmpty(editTextPersonName.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Введите ваше имя",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewPersonNameError.setText("Введите ваше имя");
                 return;
             }
 
             if (TextUtils.isEmpty(editTextPersonSurname.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Введите вашу фамилию",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewPersonSurnameError.setText("Введите вашу фамилию");
                 return;
             }
 
             if (TextUtils.isEmpty(editTextPersonBirthDate.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Введите вашу дату рождения",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewPersonBirthDateError.setText("Введите вашу дату рождения");
                 return;
             }
 
             if (!dateFormatIsValid(editTextPersonBirthDate.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Введите дату рождения в формате \"ДД.ММ.ГГГГ\"",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewPersonBirthDateError.setText("Введите дату рождения в формате \"ДД.ММ.ГГГГ\"");
                 return;
             }
 
             if (!dateIsNotFuture(editTextPersonBirthDate.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Нельзя указать будущую дату в качестве даты рождения",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewPersonBirthDateError.setText("Нельзя указать будущую дату в качестве даты рождения");
                 return;
             }
 
             if (TextUtils.isEmpty(editTextEmail.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Введите вашу электронную почту",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewEmailError.setText("Введите вашу электронную почту");
                 return;
             }
 
             if (!emailFormatIsValid(editTextEmail.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Некорректный формат электронной почты",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewEmailError.setText("Некорректный формат электронной почты");
                 return;
             }
 
             if (TextUtils.isEmpty(editTextPassword.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Введите пароль",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewPasswordError.setText("Введите пароль");
                 return;
             }
 
             if (editTextPassword.getText().toString().length() < 6) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Пароль не может быть короче 6 символов",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewPasswordError.setText("Пароль не может быть короче 6 символов");
                 return;
             }
 
             if (editTextPassword.getText().toString().length() > 12) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Пароль не может быть длиннее 12 символов",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewPasswordError.setText("Пароль не может быть длиннее 12 символов");
                 return;
             }
 
             if (!passwordFormatIsValid(editTextPassword.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Пароль должен содержать минимум один символ в нижнем регистре и минимум одну цифру",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewPasswordError.setText("Пароль должен содержать минимум один символ в нижнем регистре и минимум одну цифру");
                 return;
             }
 
             if (!editTextPassword.getText().toString().equals(editTextRepeatPassword.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Введенные пароли не совпадают",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewRepeatPasswordError.setText("Введенные пароли не совпадают");
                 return;
             }
 
             if (TextUtils.isEmpty(editTextRepeatPassword.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Повторите пароль",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewRepeatPasswordError.setText("Повторите пароль");
                 return;
             }
 
             if (!radioButtonSportsman.isChecked() && !radioButtonPsychologist.isChecked()) {
-                Snackbar.make(
-                        constraintLayoutActivityRegistration,
-                        "Выберите роль",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewRadioGroupError.setText("Выберите роль");
                 return;
             }
 
@@ -284,4 +276,5 @@ public class RegistrationActivity extends AppCompatActivity {
                     });
         });
     }
+
 }
