@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayoutActivityRegistration"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:id="@+id/constraintLayoutActivityRegistration"
+    android:background="#FFFFFF"
     tools:context=".RegistrationActivity">
 
     <LinearLayout
@@ -57,6 +57,13 @@
             android:textColor="@color/black"
             android:textColorHint="#565050" />
 
+        <TextView
+            android:id="@+id/textViewPersonNameError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#DD2C00" />
+
         <EditText
             android:id="@+id/editTextPersonSurname"
             android:layout_width="match_parent"
@@ -70,6 +77,13 @@
             android:inputType="textPersonName"
             android:textColor="@color/black"
             android:textColorHint="#565050" />
+
+        <TextView
+            android:id="@+id/textViewPersonSurnameError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#DD2C00" />
 
         <EditText
             android:id="@+id/editTextPersonBirthDate"
@@ -85,6 +99,14 @@
             android:textColor="@color/black"
             android:textColorHint="#565050" />
 
+        <TextView
+            android:id="@+id/textViewPersonBirthDateError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#DD2C00" />
+
+
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
@@ -98,6 +120,13 @@
             android:inputType="textEmailAddress"
             android:textColor="@color/black"
             android:textColorHint="#565050" />
+
+        <TextView
+            android:id="@+id/textViewEmailError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#DD2C00" />
 
         <EditText
             android:id="@+id/editTextPassword"
@@ -113,6 +142,13 @@
             android:textColor="@color/black"
             android:textColorHint="#565050" />
 
+        <TextView
+            android:id="@+id/textViewPasswordError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#DD2C00" />
+
         <EditText
             android:id="@+id/editTextRepeatPassword"
             android:layout_width="match_parent"
@@ -126,6 +162,13 @@
             android:inputType="textPassword"
             android:textColor="@color/black"
             android:textColorHint="#565050" />
+
+        <TextView
+            android:id="@+id/textViewRepeatPasswordError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#DD2C00" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -161,7 +204,7 @@
                     android:text="@string/radio_button_sportsman_text"
                     android:textColor="#38373B"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <RadioButton
                     android:id="@+id/radioButtonPsychologist"
@@ -176,6 +219,13 @@
                     android:textStyle="bold" />
             </RadioGroup>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewRadioGroupError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#DD2C00" />
 
         <Button
             android:id="@+id/buttonRegistration"
@@ -196,15 +246,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginVertical="10dp"
-            android:paddingHorizontal="15dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp">
 
             <TextView
                 android:id="@+id/textViewToAuthLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="5dp"
                 android:layout_weight="1"
+                android:paddingHorizontal="5dp"
                 android:paddingVertical="13dp"
                 android:text="@string/text_view_to_auth_label"
                 android:textColor="#827B7C"
@@ -218,8 +268,8 @@
                 android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:paddingHorizontal="5dp"
                 android:gravity="center|center_horizontal"
+                android:paddingHorizontal="5dp"
                 android:text="@string/button_authorization_text"
                 android:textAllCaps="false"
                 android:textColor="#F75E6F"
