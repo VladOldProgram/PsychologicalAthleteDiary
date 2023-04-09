@@ -14,7 +14,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
-import ru.pad.models.User;
+import ru.pad.objects.User;
 
 public class SportsmanProfileActivity extends AppCompatActivity {
     TextView textViewSportsmanNameSurname;
@@ -23,7 +23,7 @@ public class SportsmanProfileActivity extends AppCompatActivity {
     String uid;
 
     FirebaseDatabase database;
-    DatabaseReference users;
+    DatabaseReference user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +39,8 @@ public class SportsmanProfileActivity extends AppCompatActivity {
         }
 
         database = FirebaseDatabase.getInstance();
-        users = database.getReference("Users/" + uid);
-        users.addValueEventListener(new ValueEventListener() {
+        user = database.getReference("Users/" + uid);
+        user.addValueEventListener(new ValueEventListener() {
             @Override public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 String sportsmanNameSurname = Objects.requireNonNull(user).getName() + " " + user.getSurname();

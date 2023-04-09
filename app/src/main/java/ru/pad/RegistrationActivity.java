@@ -7,7 +7,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -26,7 +25,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Date;
 
-import ru.pad.models.User;
+import ru.pad.objects.User;
 
 
 public class RegistrationActivity extends AppCompatActivity {
@@ -87,9 +86,7 @@ public class RegistrationActivity extends AppCompatActivity {
         return matcher.matches();
     }
 
-
-
-
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,38 +116,14 @@ public class RegistrationActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         users = database.getReference("Users");
 
-        editTextPersonName.setOnClickListener(view -> {
-            textViewPersonNameError.setText("");
-        });
-
-        editTextPersonSurname.setOnClickListener(view -> {
-            textViewPersonSurnameError.setText("");
-        });
-
-        editTextPersonBirthDate.setOnClickListener(view -> {
-            textViewPersonBirthDateError.setText("");
-        });
-
-        editTextEmail.setOnClickListener(view -> {
-            textViewEmailError.setText("");
-        });
-
-        editTextPassword.setOnClickListener(view -> {
-            textViewPasswordError.setText("");
-        });
-
-        editTextRepeatPassword.setOnClickListener(view -> {
-            textViewRepeatPasswordError.setText("");
-        });
-
-        radioButtonSportsman.setOnClickListener(view -> {
-            textViewRadioGroupError.setText("");
-        });
-
-        radioButtonPsychologist.setOnClickListener(view -> {
-            textViewRadioGroupError.setText("");
-        });
-
+        editTextPersonName.setOnClickListener(view -> textViewPersonNameError.setText(""));
+        editTextPersonSurname.setOnClickListener(view -> textViewPersonSurnameError.setText(""));
+        editTextPersonBirthDate.setOnClickListener(view -> textViewPersonBirthDateError.setText(""));
+        editTextEmail.setOnClickListener(view -> textViewEmailError.setText(""));
+        editTextPassword.setOnClickListener(view -> textViewPasswordError.setText(""));
+        editTextRepeatPassword.setOnClickListener(view -> textViewRepeatPasswordError.setText(""));
+        radioButtonSportsman.setOnClickListener(view -> textViewRadioGroupError.setText(""));
+        radioButtonPsychologist.setOnClickListener(view -> textViewRadioGroupError.setText(""));
 
         buttonRegistration.setOnClickListener(view -> {
             if (TextUtils.isEmpty(editTextPersonName.getText().toString())) {

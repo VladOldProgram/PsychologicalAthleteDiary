@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
-import ru.pad.models.User;
+import ru.pad.objects.User;
 
 public class PsychologistProfileActivity extends AppCompatActivity {
     Button buttonRequests;
