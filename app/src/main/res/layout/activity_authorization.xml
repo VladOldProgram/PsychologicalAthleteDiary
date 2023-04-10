@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayoutActivityAuthorization"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:id="@+id/constraintLayoutActivityAuthorization">
+    android:background="#FFFFFF"
+    tools:context=".AuthorizationActivity">
 
     <LinearLayout
         android:layout_width="360dp"
@@ -24,42 +25,42 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageViewSportsman"
+            android:id="@+id/imageViewApplicationIcon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="50dp"
             android:contentDescription="@string/application_icon_content_description"
             app:srcCompat="@android:drawable/sym_def_app_icon" />
 
         <TextView
-            android:id="@+id/textViewInput"
-            android:layout_width="338dp"
-            android:layout_height="56dp"
+            android:id="@+id/textViewAuthorization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
-            android:gravity="center_vertical"
-            android:hapticFeedbackEnabled="false"
-            android:text="@string/text_view_input_text"
+            android:text="@string/text_view_authorization"
             android:textColor="#38373B"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextLogin"
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginVertical="10dp"
             android:autofillHints="no"
             android:backgroundTint="@color/black"
             android:ems="10"
-            android:hint="@string/edit_text_login"
-            android:inputType="textPersonName"
-            android:textColorHint="#5E5757" />
+            android:hint="@string/edit_text_email_hint"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint="#565050" />
 
         <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginVertical="10dp"
             android:autofillHints="no"
@@ -67,62 +68,58 @@
             android:ems="10"
             android:hint="@string/edit_text_password_hint"
             android:inputType="textPassword"
-            android:textColorHint="#5E5757" />
+            android:textColor="@color/black"
+            android:textColorHint="#565050" />
 
         <Button
-            android:id="@+id/buttonInput"
+            android:id="@+id/buttonAuthorization"
             android:layout_width="280dp"
             android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="20dp"
+            android:layout_marginVertical="30dp"
             android:backgroundTint="#F85E6F"
             android:gravity="center|center_horizontal"
-            android:text="@string/button_input_text"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/button_authorization"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_width="360dp"
-            android:layout_height="81dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginVertical="10dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp">
 
             <TextView
-                android:id="@+id/textViewNotAccountLabel"
-                android:layout_width="152dp"
-                android:layout_height="66dp"
-                android:layout_marginHorizontal="10dp"
+                android:id="@+id/textViewToRegLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
+                android:paddingHorizontal="5dp"
                 android:paddingVertical="13dp"
-                android:text="@string/text_view_not_account_label"
+                android:text="@string/text_view_to_reg_label"
                 android:textColor="#827B7C"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/buttonRegistration"
                 style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="211dp"
-                android:layout_height="64dp"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginVertical="20dp"
                 android:layout_weight="1"
-                android:backgroundTint="#00FFFFFF"
-                android:drawableTint="#00FFFFFF"
-                android:foregroundTint="#00FFFFFF"
-                android:gravity="center|center_horizontal|center_vertical"
-                android:shadowColor="#00FFFFFF"
+                android:gravity="center|center_horizontal"
+                android:paddingHorizontal="5dp"
                 android:text="@string/button_registration"
                 android:textAllCaps="false"
                 android:textColor="#F75E6F"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
-
+                tools:ignore="VisualLintBounds" />
         </LinearLayout>
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

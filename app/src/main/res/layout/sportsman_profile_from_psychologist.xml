@@ -53,7 +53,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/text_view_sportsman_email_label"
+                android:text="@string/text_view_sportsman_email"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
@@ -79,7 +79,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/text_view_birth_date_label"
+                android:text="@string/text_view_birth_date"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
@@ -98,7 +98,7 @@
             android:id="@+id/buttonCalendarFromPsychologist"
             android:layout_width="match_parent"
             android:layout_height="58dp"
-            android:text="@string/button_calendar_from_psychologist_text"
+            android:text="@string/button_calendar_from_psychologist"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -111,7 +111,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="230dp"
             android:layout_marginTop="440dp"
-            android:text="@string/button_delete_from_psychologist_text"
+            android:text="@string/button_delete_from_psychologist"
             android:textColor="#000000"
             app:backgroundTint="#B4FDA5AE" />
 

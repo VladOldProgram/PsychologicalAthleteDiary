@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
-            android:text="@string/text_view_registration_text"
+            android:text="@string/text_view_registration"
             android:textColor="#38373B"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="10dp"
             android:autofillHints="no"
             android:backgroundTint="@color/black"
             android:ems="10"
@@ -69,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="10dp"
             android:autofillHints="no"
             android:backgroundTint="@color/black"
             android:ems="10"
@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="10dp"
             android:autofillHints="no"
             android:backgroundTint="@color/black"
             android:ems="10"
@@ -106,13 +106,12 @@
             android:gravity="center_horizontal"
             android:textColor="#DD2C00" />
 
-
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="10dp"
             android:autofillHints="no"
             android:backgroundTint="@color/black"
             android:ems="10"
@@ -133,7 +132,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="10dp"
             android:autofillHints="no"
             android:backgroundTint="@color/black"
             android:ems="10"
@@ -154,7 +153,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="10dp"
             android:autofillHints="no"
             android:backgroundTint="@color/black"
             android:ems="10"
@@ -174,7 +173,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -184,7 +183,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_weight="1"
                 android:paddingVertical="10dp"
-                android:text="@string/text_view_role_text"
+                android:text="@string/text_view_role"
                 android:textColor="#F85E6F"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -201,7 +200,7 @@
                     android:layout_marginHorizontal="10dp"
                     android:layout_weight="1"
                     android:buttonTint="#38373B"
-                    android:text="@string/radio_button_sportsman_text"
+                    android:text="@string/radio_button_sportsman"
                     android:textColor="#38373B"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -213,7 +212,7 @@
                     android:layout_marginHorizontal="10dp"
                     android:layout_weight="1"
                     android:buttonTint="#38373B"
-                    android:text="@string/radio_button_psychologist_text"
+                    android:text="@string/radio_button_psychologist"
                     android:textColor="#38373B"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -232,12 +231,12 @@
             android:layout_width="wrap_content"
             android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#F85E6F"
             android:gravity="center|center_horizontal"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
-            android:text="@string/button_registration_text"
+            android:text="@string/button_registration"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -245,7 +244,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:paddingHorizontal="15dp">
 
@@ -256,7 +255,7 @@
                 android:layout_weight="1"
                 android:paddingHorizontal="5dp"
                 android:paddingVertical="13dp"
-                android:text="@string/text_view_to_auth_label"
+                android:text="@string/text_view_to_auth"
                 android:textColor="#827B7C"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -270,14 +269,12 @@
                 android:layout_weight="1"
                 android:gravity="center|center_horizontal"
                 android:paddingHorizontal="5dp"
-                android:text="@string/button_authorization_text"
+                android:text="@string/button_authorization"
                 android:textAllCaps="false"
                 android:textColor="#F75E6F"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="VisualLintBounds" />
-
         </LinearLayout>
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
