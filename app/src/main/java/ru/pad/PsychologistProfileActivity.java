@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,14 +20,14 @@ import java.util.Objects;
 import ru.pad.objects.User;
 
 public class PsychologistProfileActivity extends AppCompatActivity {
-    Button buttonRequests;
-    TextView textViewPsychologistNameSurname;
-    TextView textViewPsychologistBirthDate;
+    TextView textViewPsychologistNameSurname, textViewPsychologistBirthDate;
+    Button buttonPsychologistProfileExit, buttonRequests;
 
     String uid;
 
     FirebaseDatabase database;
-    DatabaseReference users;
+    FirebaseAuth auth;
+    DatabaseReference dbUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class PsychologistProfileActivity extends AppCompatActivity {
 
         textViewPsychologistNameSurname = findViewById(R.id.textViewPsychologistNameSurname);
         textViewPsychologistBirthDate = findViewById(R.id.textViewPsychologistBirthDate);
+        buttonPsychologistProfileExit = findViewById(R.id.buttonPsychologistProfileExit);
+        buttonRequests = findViewById(R.id.buttonRequests);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -42,8 +45,9 @@ public class PsychologistProfileActivity extends AppCompatActivity {
         }
 
         database = FirebaseDatabase.getInstance();
-        users = database.getReference("Users/" + uid);
-        users.addValueEventListener(new ValueEventListener() {
+        auth = FirebaseAuth.getInstance();
+        dbUser = database.getReference("Users/" + uid);
+        dbUser.addValueEventListener(new ValueEventListener() {
             @Override public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 String psychologistNameSurname = Objects.requireNonNull(user).getName() + " " + user.getSurname();
@@ -56,8 +60,14 @@ public class PsychologistProfileActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) { }
         });
 
-        buttonRequests = findViewById(R.id.buttonRequests);
-        buttonRequests.setOnClickListener(view -> {
+        buttonPsychologistProfileExit.setOnClickListener(unused1 -> {
+            auth.signOut();
+            Intent AuthorizationActivity = new Intent(this, AuthorizationActivity.class);
+            startActivity(AuthorizationActivity);
+            finish();
+        });
+
+        buttonRequests.setOnClickListener(unused2 -> {
             Intent psychologistRequestsActivity = new Intent(this, PsychologistRequestsActivity.class);
             startActivity(psychologistRequestsActivity);
         });

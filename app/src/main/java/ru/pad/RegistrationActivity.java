@@ -39,7 +39,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     FirebaseDatabase database;
     FirebaseAuth auth;
-    DatabaseReference users;
+    DatabaseReference dbUser;
 
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[A-Z\\d._%+-]+@[A-Z\\d.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -114,7 +114,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
-        users = database.getReference("Users");
+        dbUser = database.getReference("Users");
 
         editTextPersonName.setOnClickListener(view -> textViewPersonNameError.setText(""));
         editTextPersonSurname.setOnClickListener(view -> textViewPersonSurnameError.setText(""));
@@ -125,7 +125,7 @@ public class RegistrationActivity extends AppCompatActivity {
         radioButtonSportsman.setOnClickListener(view -> textViewRadioGroupError.setText(""));
         radioButtonPsychologist.setOnClickListener(view -> textViewRadioGroupError.setText(""));
 
-        buttonRegistration.setOnClickListener(view -> {
+        buttonRegistration.setOnClickListener(unused1 -> {
             if (TextUtils.isEmpty(editTextPersonName.getText().toString())) {
                 textViewPersonNameError.setText("Введите ваше имя");
                 return;
@@ -197,7 +197,7 @@ public class RegistrationActivity extends AppCompatActivity {
             }
 
             auth.createUserWithEmailAndPassword(editTextEmail.getText().toString(), editTextPassword.getText().toString())
-                    .addOnSuccessListener(authResult -> {
+                    .addOnSuccessListener(unused2 -> {
                         String role;
                         if (radioButtonSportsman.isChecked()) {
                             role = radioButtonSportsman.getText().toString();
@@ -213,13 +213,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 role
                         );
                         String uid = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
-                        users.child(uid)
-                                .setValue(user)
-                                .addOnSuccessListener(unused -> Snackbar.make(
-                                        constraintLayoutActivityRegistration,
-                                        "Регистрация прошла успешно!",
-                                        Snackbar.LENGTH_SHORT
-                                ).show());
+                        dbUser.child(uid).setValue(user);
                         if (user.getRole().equals("Спортсмен")) {
                             Intent sportsmanProfileActivity = new Intent(this, SportsmanProfileActivity.class);
                             sportsmanProfileActivity.putExtra("uid", uid);
@@ -229,10 +223,19 @@ public class RegistrationActivity extends AppCompatActivity {
                             psychologistProfileActivity.putExtra("uid", uid);
                             startActivity(psychologistProfileActivity);
                         }
+                        finish();
                     })
                     .addOnFailureListener(e -> {
                         if (Objects.requireNonNull(e.getMessage()).contains("email address is already in use")) {
                             String errorMessage = "указанный email-адрес уже зарегистрирован";
+                            Snackbar.make(
+                                    constraintLayoutActivityRegistration,
+                                    "Ошибка регистрации: " + errorMessage,
+                                    Snackbar.LENGTH_LONG
+                            ).show();
+                        }
+                        else if (Objects.requireNonNull(e.getMessage()).contains("A network error")) {
+                            String errorMessage = "потеряно соединение с интернетом";
                             Snackbar.make(
                                     constraintLayoutActivityRegistration,
                                     "Ошибка регистрации: " + errorMessage,
@@ -247,6 +250,11 @@ public class RegistrationActivity extends AppCompatActivity {
                             ).show();
                         }
                     });
+        });
+
+        buttonAuthorization.setOnClickListener(view -> {
+            startActivity(new Intent(this, AuthorizationActivity.class));
+            finish();
         });
     }
 
