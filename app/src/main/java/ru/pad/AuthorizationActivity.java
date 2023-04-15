@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -32,7 +33,7 @@ import java.util.regex.Pattern;
 
 import ru.pad.objects.User;
 
-import android.view.Gravity;
+import android.graphics.PorterDuff;
 
 
 public class AuthorizationActivity extends AppCompatActivity {
