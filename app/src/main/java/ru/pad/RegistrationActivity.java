@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -227,27 +228,16 @@ public class RegistrationActivity extends AppCompatActivity {
                     })
                     .addOnFailureListener(e -> {
                         if (Objects.requireNonNull(e.getMessage()).contains("email address is already in use")) {
-                            String errorMessage = "указанный email-адрес уже зарегистрирован";
-                            Snackbar.make(
-                                    constraintLayoutActivityRegistration,
-                                    "Ошибка регистрации: " + errorMessage,
-                                    Snackbar.LENGTH_LONG
-                            ).show();
+                            Toast toast = Toast.makeText(getApplicationContext(), "Ошибка регистрации: указанный email-адрес уже зарегистрирован", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
                         else if (Objects.requireNonNull(e.getMessage()).contains("A network error")) {
-                            String errorMessage = "потеряно соединение с интернетом";
-                            Snackbar.make(
-                                    constraintLayoutActivityRegistration,
-                                    "Ошибка регистрации: " + errorMessage,
-                                    Snackbar.LENGTH_LONG
-                            ).show();
+                            Toast toast = Toast.makeText(getApplicationContext(), "Ошибка регистрации: потеряно соединение с интернетом", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
                         else {
-                            Snackbar.make(
-                                    constraintLayoutActivityRegistration,
-                                    "Ошибка регистрации: " + e.getMessage(),
-                                    Snackbar.LENGTH_LONG
-                            ).show();
+                            Toast toast = Toast.makeText(getApplicationContext(), "Ошибка регистрации:" + e.getMessage(), Toast.LENGTH_SHORT);
+                            toast.show();
                         }
                     });
         });
