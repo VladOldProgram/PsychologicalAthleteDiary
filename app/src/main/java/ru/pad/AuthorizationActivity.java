@@ -1,15 +1,20 @@
 package ru.pad;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,8 +32,12 @@ import java.util.regex.Pattern;
 
 import ru.pad.objects.User;
 
+import android.view.Gravity;
+
 
 public class AuthorizationActivity extends AppCompatActivity {
+
+    TextView textViewTextEmailError, textViewTextPasswordError;
     EditText editTextEmail, editTextPassword;
     Button buttonRegistration, buttonAuthorization;
     ConstraintLayout constraintLayoutActivityAuthorization;
@@ -58,34 +67,30 @@ public class AuthorizationActivity extends AppCompatActivity {
         buttonRegistration = findViewById(R.id.buttonRegistration);
         constraintLayoutActivityAuthorization = findViewById(R.id.constraintLayoutActivityAuthorization);
 
+        textViewTextEmailError = findViewById(R.id.textViewTextEmailError);
+        textViewTextPasswordError = findViewById(R.id.textViewTextPasswordError);
+
+        textViewTextEmailError.setOnClickListener(view -> textViewTextEmailError.setText(""));
+        textViewTextPasswordError.setOnClickListener(view -> textViewTextPasswordError.setText(""));
+
+
         database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
 
         buttonAuthorization.setOnClickListener(unused1 -> {
+
             if (TextUtils.isEmpty(editTextEmail.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityAuthorization,
-                        "Введите вашу электронную почту",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewTextEmailError.setText("Введите вашу электронную почту");
                 return;
             }
 
             if (!emailFormatIsValid(editTextEmail.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityAuthorization,
-                        "Некорректный формат электронной почты",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewTextEmailError.setText("Некорректный формат электронной почты");
                 return;
             }
 
             if (TextUtils.isEmpty(editTextPassword.getText().toString())) {
-                Snackbar.make(
-                        constraintLayoutActivityAuthorization,
-                        "Введите пароль",
-                        Snackbar.LENGTH_SHORT
-                ).show();
+                textViewTextPasswordError.setText("Введите пароль");
                 return;
             }
 
@@ -107,42 +112,27 @@ public class AuthorizationActivity extends AppCompatActivity {
                                 }
                                 finish();
                             }
-
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) { }
                         });
                     })
                     .addOnFailureListener(e -> {
+
                         if (Objects.requireNonNull(e.getMessage()).contains("There is no user record")) {
-                            String errorMessage = "указанный email-адрес не зарегистрирован";
-                            Snackbar.make(
-                                    constraintLayoutActivityAuthorization,
-                                    "Ошибка авторизации: " + errorMessage,
-                                    Snackbar.LENGTH_LONG
-                            ).show();
+                            Toast toast = Toast.makeText(getApplicationContext(), "Ошибка авторизации: указанный email-адрес не зарегистрирован", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
                         else if (Objects.requireNonNull(e.getMessage()).contains("The password is invalid")) {
-                            String errorMessage = "неправильный пароль";
-                            Snackbar.make(
-                                    constraintLayoutActivityAuthorization,
-                                    "Ошибка авторизации: " + errorMessage,
-                                    Snackbar.LENGTH_LONG
-                            ).show();
+                            Toast toast = Toast.makeText(getApplicationContext(), "Ошибка авторизации: неправильный пароль ", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
                         else if (Objects.requireNonNull(e.getMessage()).contains("A network error")) {
-                            String errorMessage = "потеряно соединение с интернетом";
-                            Snackbar.make(
-                                    constraintLayoutActivityAuthorization,
-                                    "Ошибка авторизации: " + errorMessage,
-                                    Snackbar.LENGTH_LONG
-                            ).show();
+                            Toast toast = Toast.makeText(getApplicationContext(), "Ошибка авторизации: потеряно соединение с интернетом", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
                         else {
-                            Snackbar.make(
-                                    constraintLayoutActivityAuthorization,
-                                    "Ошибка авторизации: " + e.getMessage(),
-                                    Snackbar.LENGTH_LONG
-                            ).show();
+                            Toast toast = Toast.makeText(getApplicationContext(), "Ошибка авторизации: " + e.getMessage(), Toast.LENGTH_SHORT);
+                            toast.show();
                         }
                     });
         });
