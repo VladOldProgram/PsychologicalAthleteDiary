@@ -143,4 +143,3 @@ public class AuthorizationActivity extends AppCompatActivity {
         });
     }
 }
-
