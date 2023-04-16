@@ -48,4 +48,16 @@
     <string name="passed_tests_icon">Passed Tests Icon</string>
     <string name="available_tests_icon">Available Tests Icon</string>
     <string name="passed_tests_today_icon">Passed Tests Today Icon</string>
+    <string name="button_left"><![CDATA[<-]]></string>
+    <string name="button_right"><![CDATA[->]]></string>
+    <string name="text_view_sunday">Вс</string>
+    <string name="text_view_saturday">Сб</string>
+    <string name="text_view_thursday">Чт</string>
+    <string name="text_view_wednesday">Ср</string>
+    <string name="text_view_tuesday">Вт</string>
+    <string name="text_view_monday">Пн</string>
+    <string name="text_view_friday">Пт</string>
+    <string name="menu_navigation_calendar">Календарь</string>
+    <string name="menu_navigation_notes">Заметки</string>
+    <string name="menu_navigation_profile">Профиль</string>
 </resources>
