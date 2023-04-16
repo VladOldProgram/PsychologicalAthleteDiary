@@ -29,6 +29,8 @@
         <activity
             android:name=".PsychologistProfileActivity" />
         <activity
+            android:name=".CalendarViewActivity" />
+        <activity
             android:name=".PsychologistRequestsActivity" />
     </application>
 </manifest>
