@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,6 +39,25 @@ public class PsychologistProfileActivity extends AppCompatActivity {
         textViewPsychologistBirthDate = findViewById(R.id.textViewPsychologistBirthDate);
         buttonPsychologistProfileExit = findViewById(R.id.buttonPsychologistProfileExit);
         buttonRequests = findViewById(R.id.buttonRequests);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.profile);
+        bottomNavigationView.setOnItemSelectedListener(menuItem -> {
+            switch(menuItem.getItemId()) {
+                case R.id.calendar:
+                    startActivity(new Intent(getApplicationContext(), CalendarViewActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                case R.id.notes:
+                    // TODO: NotesActivity.class
+                    //startActivity(new Intent(getApplicationContext(), CalendarViewActivity.class));
+                    //overridePendingTransition(0, 0);
+                    return true;
+                case R.id.profile:
+                    return true;
+            }
+            return false;
+        });
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
