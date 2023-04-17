@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayoutActivityRegistration"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".RegistrationActivity">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
+
+            <ImageView
+                android:id="@+id/imageViewApplicationIcon"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:contentDescription="@string/application_icon_content_description"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/pad_icon" />
+
+            <TextView
+                android:id="@+id/textViewRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="@string/text_view_registration"
+                android:textColor="#38373B"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="no"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColorHint="#565050"
+                android:theme="@style/Widget.Design.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/editTextPersonName"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:autofillHints="no"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/edit_text_person_name_hint"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/black"
+                    android:textColorHint="#565050"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutPersonSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="no"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColorHint="#565050"
+                android:theme="@style/Widget.Design.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/editTextPersonSurname"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:autofillHints="no"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/edit_text_person_surname_hint"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/black"
+                    android:textColorHint="#565050"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutPersonBirthDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="no"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColorHint="#565050"
+                android:theme="@style/Widget.Design.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/editTextPersonBirthDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:autofillHints="no"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/edit_text_person_birth_date_hint"
+                    android:inputType="date"
+                    android:textColor="@color/black"
+                    android:textColorHint="#565050"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="no"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColorHint="#565050"
+                android:theme="@style/Widget.Design.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:autofillHints="no"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/edit_text_email_hint"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black"
+                    android:textColorHint="#565050"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="no"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColorHint="#565050"
+                android:theme="@style/Widget.Design.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:autofillHints="no"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/edit_text_password_hint"
+                    android:inputType="textPassword"
+                    android:textColor="@color/black"
+                    android:textColorHint="#565050"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutRepeatPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="no"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColorHint="#565050"
+                android:theme="@style/Widget.Design.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/editTextRepeatPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:autofillHints="no"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/edit_text_repeat_password_hint"
+                    android:inputType="textPassword"
+                    android:textColor="@color/black"
+                    android:textColorHint="#565050"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewRole"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="1"
+                    android:paddingVertical="10dp"
+                    android:text="@string/text_view_role"
+                    android:textColor="#F85E6F"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonSportsman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="1"
+                        android:buttonTint="#38373B"
+                        android:text="@string/radio_button_sportsman"
+                        android:textColor="#38373B"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonPsychologist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="1"
+                        android:buttonTint="#38373B"
+                        android:text="@string/radio_button_psychologist"
+                        android:textColor="#38373B"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewRadioGroupError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="@color/red" />
+
+            <Button
+                android:id="@+id/buttonRegistration"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#F85E6F"
+                android:gravity="center|center_horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="@string/button_registration"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="15dp">
+
+                <TextView
+                    android:id="@+id/textViewToAuthLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="13dp"
+                    android:text="@string/text_view_to_auth"
+                    android:textColor="#827B7C"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonAuthorization"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center|center_horizontal"
+                    android:paddingHorizontal="5dp"
+                    android:text="@string/button_authorization"
+                    android:textAllCaps="false"
+                    android:textColor="#F75E6F"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="VisualLintBounds" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
