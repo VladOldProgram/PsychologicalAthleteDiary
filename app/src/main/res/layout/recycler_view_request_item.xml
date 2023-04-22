@@ -36,21 +36,21 @@
         <ImageButton
             android:id="@+id/buttonDeclineRequest"
             android:layout_width="60dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:layout_marginHorizontal="10dp"
             app:backgroundTint="@color/my_light_pink"
-            app:srcCompat="@android:drawable/ic_delete"
+            app:srcCompat="@drawable/decline_application"
             app:tint="@color/white"
-            tools:ignore="SpeakableTextPresentCheck"/>
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/buttonAcceptRequest"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             app:backgroundTint="@color/my_light_pink"
-            app:srcCompat="@android:drawable/ic_input_add"
+            app:srcCompat="@drawable/accept_application"
             app:tint="@color/white"
-            tools:ignore="SpeakableTextPresentCheck"/>
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
