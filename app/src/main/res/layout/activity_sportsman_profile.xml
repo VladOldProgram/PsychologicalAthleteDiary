@@ -53,147 +53,157 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="10dp"
-            android:gravity="center_horizontal"
-            android:text="@string/text_view_sportsman"
-            android:textColor="@color/black"
-            android:textSize="18sp"/>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginVertical="5dp"
-            android:contentDescription="@string/application_icon_content_description"
-            app:srcCompat="@drawable/pictures_sportsman"/>
-
-        <TextView
-            android:id="@+id/textViewSportsmanNameSurname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="5dp"
-            android:gravity="center_horizontal"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:layout_marginHorizontal="10dp"/>
-
-        <TextView
-            android:id="@+id/textViewSportsmanBirthDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="5dp"
-            android:gravity="center_horizontal"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:layout_marginHorizontal="10dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:background="@color/very_light_grey"
-            android:gravity="center_horizontal|center_vertical"
-            android:padding="5dp"
-            android:text="@string/text_view_psychologist"
-            android:textColor="@color/black"
-            android:textSize="18sp"/>
-
-        <LinearLayout
-            android:id="@+id/linearLayoutAddPsychologist"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:visibility="gone">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButtonAddPsychologist"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/my_light_pink"
-                android:clickable="true"
-                android:contentDescription="@string/floating_action_button_add_psychologist"
-                app:srcCompat="@android:drawable/ic_input_add"
-                app:tint="@color/white"/>
-
-            <EditText
-                android:id="@+id/editTextPsychologistEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:paddingHorizontal="20dp"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:hint="@string/edit_text_psychologist_email_hint"
-                android:textColorHint="@color/grey"
-                android:autofillHints="no"
-                android:backgroundTint="@color/black"
-                android:ems="10"
-                android:inputType="textEmailAddress" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textViewAddPsychologistStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:layout_marginHorizontal="10dp"
-            android:gravity="center_vertical"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:visibility="gone"/>
-
-        <LinearLayout
-            android:id="@+id/linearLayoutCurrentPsychologistNameSurname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="13dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/textViewCurrentPsychologistNameSurname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:textSize="18sp"
-                android:textColor="@color/white"
-                android:background="@color/my_pink"
-                android:textStyle="bold"/>
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/buttonDeletePsychologist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginBottom="10dp"
-            android:layout_marginHorizontal="10dp"
-            android:backgroundTint="@color/my_light_pink"
-            android:text="@string/button_delete_psychologist"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:visibility="gone"/>
-
-        <Space
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            app:layout_constraintTop_toTopOf="@id/bottomNavigationView"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/text_view_sportsman"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginVertical="5dp"
+                    android:contentDescription="@string/application_icon_content_description"
+                    app:srcCompat="@drawable/pictures_sportsman"/>
+
+                <TextView
+                    android:id="@+id/textViewSportsmanNameSurname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_marginHorizontal="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewSportsmanBirthDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_marginHorizontal="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:background="@color/very_light_grey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/text_view_psychologist"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAddPsychologist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/floatingActionButtonAddPsychologist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/my_light_pink"
+                        android:clickable="true"
+                        android:contentDescription="@string/floating_action_button_add_psychologist"
+                        app:srcCompat="@android:drawable/ic_input_add"
+                        app:tint="@color/white"/>
+
+                    <EditText
+                        android:id="@+id/editTextPsychologistEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:hint="@string/edit_text_psychologist_email_hint"
+                        android:textColorHint="@color/grey"
+                        android:autofillHints="no"
+                        android:backgroundTint="@color/black"
+                        android:ems="10"
+                        android:inputType="textEmailAddress" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewAddPsychologistStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCurrentPsychologistNameSurname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="13dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/textViewCurrentPsychologistNameSurname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="10dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:background="@color/my_pink"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/buttonDeletePsychologist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/my_light_pink"
+                    android:text="@string/button_delete_psychologist"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+                </LinearLayout>
+            </ScrollView>
+
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
