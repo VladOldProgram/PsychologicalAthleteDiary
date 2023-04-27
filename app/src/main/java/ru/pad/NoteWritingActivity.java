@@ -73,7 +73,15 @@ public class NoteWritingActivity extends AppCompatActivity {
         });
 
         EditText editTextSituation = findViewById(R.id.editTextSituation);
+        EditText editTextThoughts = findViewById(R.id.editTextThoughts);
+        EditText editTextEmotions = findViewById(R.id.editTextEmotions);
+        EditText editTextReactions = findViewById(R.id.editTextReactions);
+
         editTextSituation.setMovementMethod(ScrollingMovementMethod.getInstance());
+        editTextThoughts.setMovementMethod(ScrollingMovementMethod.getInstance());
+        editTextEmotions.setMovementMethod(ScrollingMovementMethod.getInstance());
+        editTextReactions.setMovementMethod(ScrollingMovementMethod.getInstance());
+
         editTextSituation.setOnTouchListener((view, motionEvent) -> {
             if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){
                 view.getParent().requestDisallowInterceptTouchEvent(true);
@@ -86,6 +94,46 @@ public class NoteWritingActivity extends AppCompatActivity {
             }
             return false;
         });
+
+        editTextThoughts.setOnTouchListener((view, motionEvent) -> {
+            if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){
+                view.getParent().requestDisallowInterceptTouchEvent(true);
+            }
+            if (motionEvent.getAction()==MotionEvent.ACTION_MOVE){
+                view.getParent().requestDisallowInterceptTouchEvent(true);
+            }
+            if (motionEvent.getAction()==MotionEvent.ACTION_UP){
+                view.getParent().requestDisallowInterceptTouchEvent(false);
+            }
+            return false;
+        });
+
+        editTextEmotions.setOnTouchListener((view, motionEvent) -> {
+            if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){
+                view.getParent().requestDisallowInterceptTouchEvent(true);
+            }
+            if (motionEvent.getAction()==MotionEvent.ACTION_MOVE){
+                view.getParent().requestDisallowInterceptTouchEvent(true);
+            }
+            if (motionEvent.getAction()==MotionEvent.ACTION_UP){
+                view.getParent().requestDisallowInterceptTouchEvent(false);
+            }
+            return false;
+        });
+
+        editTextReactions.setOnTouchListener((view, motionEvent) -> {
+            if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){
+                view.getParent().requestDisallowInterceptTouchEvent(true);
+            }
+            if (motionEvent.getAction()==MotionEvent.ACTION_MOVE){
+                view.getParent().requestDisallowInterceptTouchEvent(true);
+            }
+            if (motionEvent.getAction()==MotionEvent.ACTION_UP){
+                view.getParent().requestDisallowInterceptTouchEvent(false);
+            }
+            return false;
+        });
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.notes);
