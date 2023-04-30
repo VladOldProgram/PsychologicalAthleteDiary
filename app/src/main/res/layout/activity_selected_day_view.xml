@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="0dp"
+    android:paddingVertical="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.45"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".SelectedDayViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/my_pink"
+        android:orientation="horizontal"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp">
+
+    <TextView
+        android:id="@+id/textViewSelectedDayDate"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:paddingVertical="10dp"
+        android:background="@color/my_pink"
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/buttonAssignTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/button_assign_test"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/my_light_pink"
+        android:layout_gravity="center_vertical"
+        android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewNoActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/text_view_no_actions"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutAvailableTests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/very_light_grey"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewAvailableTestMark"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/available_test_mark_content_description"
+                    app:tint="@color/yellow"
+                    app:srcCompat="@android:drawable/presence_online"
+                    tools:ignore="Suspicious0dp"/>
+
+                <TextView
+                    android:id="@+id/textViewAvailableTests"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingStart="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/text_view_available_tests"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAvailableTests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutCompletedTests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/very_light_grey"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewCompletedTestMark"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/completed_test_mark_content_description"
+                    app:tint="@color/green"
+                    app:srcCompat="@android:drawable/presence_online"
+                    tools:ignore="Suspicious0dp"/>
+
+                <TextView
+                    android:id="@+id/textViewCompletedTests"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingStart="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/text_view_completed_tests"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCompletedTests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutNotCompletedTests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/very_light_grey"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewNotCompletedTestMark"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/not_completed_test_mark_content_description"
+                    app:tint="@color/red"
+                    app:srcCompat="@android:drawable/presence_online"
+                    tools:ignore="Suspicious0dp"/>
+
+                <TextView
+                    android:id="@+id/textViewNotCompletedTests"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingStart="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/text_view_not_completed_tests"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewNotCompletedTests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutAssignedTests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/very_light_grey"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewAssignedTestMark"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/assigned_test_mark_content_description"
+                    app:tint="@color/grey"
+                    app:srcCompat="@android:drawable/presence_online"
+                    tools:ignore="Suspicious0dp"/>
+
+                <TextView
+                    android:id="@+id/textViewAssignedTests"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingStart="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/text_view_assigned_tests"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAssignedTests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/very_light_grey"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewNotes"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/note_mark_content_description"
+                    app:tint="@color/blue"
+                    app:srcCompat="@android:drawable/presence_online"
+                    tools:ignore="Suspicious0dp"/>
+
+                <TextView
+                    android:id="@+id/textViewNotes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingStart="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/text_view_notes"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
