@@ -103,7 +103,7 @@ public class TestViewActivity extends AppCompatActivity {
                             .child("activity")
                             .child(LocalDate.now().format(formatter))
                             .child("completedTests")
-                            .child(testName + " " + currentTime)
+                            .child(testName.substring(0, testName.length() - 8) + " " + currentTime)
                             .setValue(testResultUrl);
                     dbUser
                             .child("activity")
