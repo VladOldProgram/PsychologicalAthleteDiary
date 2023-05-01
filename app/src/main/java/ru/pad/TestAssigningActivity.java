@@ -108,6 +108,11 @@ public class TestAssigningActivity extends AppCompatActivity implements Recycler
                         "Тесты назначены",
                         Toast.LENGTH_SHORT
                 ).show();
+
+                checkedTestNames.clear();
+                ArrayList<String> items = new ArrayList<>(Objects.requireNonNull(tests).keySet());
+                recyclerViewAssigningTestsAdapter = new RecyclerViewAssigningTestsAdapter(items, TestAssigningActivity.this);
+                recyclerViewAssigningTests.setAdapter(recyclerViewAssigningTestsAdapter);
             }
         });
     }
