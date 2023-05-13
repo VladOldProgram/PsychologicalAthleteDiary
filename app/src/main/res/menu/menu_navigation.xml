@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/calendar"
+        android:icon="@android:drawable/ic_menu_month"
+        android:title="@string/menu_navigation_calendar"/>
+
+    <item
+        android:id="@+id/notes"
+        android:icon="?attr/actionModePasteDrawable"
+        android:title="@string/menu_navigation_notes"/>
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="@string/menu_navigation_profile"/>
+
+</menu>
