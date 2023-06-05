@@ -85,4 +85,10 @@
     <string name="text_view_no_requests">У вас пока нет заявок</string>
     <string name="text_view_delete_sportsman">Удалить выбранного спортсмена?</string>
     <string name="text_view_delete_psychologist">Удалить психолога?</string>
+    <string name="text_view_forgot_password">Восстановление пароля</string>
+    <string name="text_view_to_back_label">Вернуться на</string>
+    <string name="button_authorization_forgot_password">Войти</string>
+    <string name="button_forgot_password">Восстановить</string>
+    <string name="text_view_to_forgot_password_label">Забыли пароль?</string>
+    <string name="button_restore_password">Восстановить</string>
 </resources>
