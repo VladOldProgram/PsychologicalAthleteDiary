@@ -89,4 +89,5 @@ public class RegistrationActivityTest {
     public void incorrectStringWithoutNumberIsNotValidPassword() {
         assertFalse(passwordFormatIsValid("password"));
     }
+
 }
