@@ -27,7 +27,6 @@ import ru.pad.objects.GenericUser;
  * Класс объекта активности авторизации
  */
 public class AuthorizationActivity extends AppCompatActivity {
-
     /**
      * Регулярное выражение для определения корректности формата электронной почты
      */
@@ -71,6 +70,7 @@ public class AuthorizationActivity extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
         Button buttonAuthorization = findViewById(R.id.buttonAuthorization);
+        Button buttonRestorePassword = findViewById(R.id.buttonRestorePassword);
         /*
           Привязка к кнопке функции авторизации пользователя
          */
@@ -159,6 +159,12 @@ public class AuthorizationActivity extends AppCompatActivity {
                             ).show();
                         }
                     });
+        });
+
+        buttonRestorePassword.setOnClickListener(view -> {
+            startActivity(new Intent(this, ForgotPasswordActivity.class));
+            finishAffinity();
+            finish();
         });
 
         Button buttonRegistration = findViewById(R.id.buttonRegistration);
