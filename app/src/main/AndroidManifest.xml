@@ -40,5 +40,7 @@
             android:name=".SelectedSportsmanProfileActivity"/>
         <activity
             android:name=".TestAssigningActivity"/>
+        <activity
+            android:name=".ForgotPasswordActivity"/>
     </application>
 </manifest>
