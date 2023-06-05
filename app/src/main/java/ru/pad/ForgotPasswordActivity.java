@@ -69,6 +69,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     }
 
     private void forgotPassword() {
+        email = txtEmail.getText().toString();
         auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
